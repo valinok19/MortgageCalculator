@@ -1,5 +1,5 @@
 let data = {
-    selectedProgram: 0.1,
+    selectedProgram: 0.249,
     cost: 12000000,
     minPrice: 375000,
     maxPrice: 100000000,
@@ -65,6 +65,8 @@ function setData(newData) {
         if (data.payment < data.getMinPayment()) {
             data.payment = data.getMinPayment();
         }
+
+        data.paymentPercents = (data.payment * 100) / newData.cost / 100;
     }
 
     if (newData.onUpdate === 'inputPayment') {
