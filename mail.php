@@ -24,12 +24,15 @@ $message .= "<hr>";
 // Результаты расчета
 $message .= "<h2>Результаты расчета</h2>";
 $message .= "Процентная ставка: {$data['results']['rate']} <br>";
-$message .= "Сумма кредита: {$data['results']['totalAmount']} <br>";
+$message .= "Сумма кредита: {$data['results']['totalAmont']} <br>";
 $message .= "Ежемесячный платеж: {$data['results']['monthPayment']} <br>";
 $message .= "Переплата: {$data['results']['overPayment']} <br>";
 
+ $headers = 'From: youremail@example.com' . "\r\n" .
+              'Reply-To: youremail@example.com' . "\r\n" .
+              'X-Mailer: PHP/' . phpversion();
 // Отправляем письмо и результат отправки успех/неуспех true/false записываем в $result
-$result = mail('info@mail.com', 'Заявка на ипотеку', $message);
+$result = mail('info@mail.com', 'Заявка на ипотеку', $message, $headers);
 
 // На основе успешной или не успешной отправки сообщаем SUCCESS или FAILED
 // !!! Больше никакого вывода из данного файла быть не должно

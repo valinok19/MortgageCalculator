@@ -24,7 +24,7 @@ body {
 
 .container {
 	padding: 0 var(--container-padding);
-	max-width: var(--container-width-l);
+	max-widthа: var(--container-width-l);
 	margin: 0 auto;
 }
 
@@ -279,6 +279,7 @@ body {
 .order-form-wrapper {
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 20px;
 }
 
 .order-btn {
